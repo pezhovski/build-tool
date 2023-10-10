@@ -1,0 +1,12 @@
+[main]
+changes_collection_mode = "changelist"
+ci_home = "./ci-home"
+vault_address = "http://localhost:8200"
+vault_token = "myroot"
+
+[perforce_connection.default]
+password = "verystrongpassword1234"
+server_host = "perforce"
+server_port = 1666
+server_tls = false
+username = "ciuser"

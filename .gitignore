@@ -1,0 +1,6 @@
+.venv
+ci
+ci-home
+__pycache__/
+*.py[cod]
+*$py.class

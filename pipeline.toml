@@ -1,0 +1,27 @@
+[pipeline]
+name = "MyPipeline"
+
+[pipeline.scms.perforce]
+type = "perforce"
+client_root = "./ci"
+client_name = "ci-workspace"
+stream_name = "main"
+depot_name = "mydepot"
+connection_config_name = "default"
+
+[[pipeline.actions]]
+name = "Checkout"
+[pipeline.actions.checkout]
+scm_name = "perforce"
+
+[[pipeline.actions]]
+name = "Build"
+[[pipeline.actions.command.commands]]
+type="shell"
+command="test.sh"
+
+[[pipeline.actions]]
+name = "Upload Changes"
+[pipeline.actions.upload]
+type = "scm"
+scm_name = "perforce"
